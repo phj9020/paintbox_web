@@ -1,16 +1,19 @@
 @import "_variables";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Caladea', serif;
+  font-family: "Caladea", serif;
   padding: 0px 140px;
   padding-top: 70px;
 }
-
+a {
+  color: inherit;
+}
 header {
   width: 100%;
   height: 80px;
@@ -37,17 +40,17 @@ header {
     &:first-child {
       li {
         margin-right: 42px;
-        @extend %miniTitle;
+        @extend %nav;
       }
     }
     &:nth-child(2) {
       li {
         margin-right: 225px;
-        @extend %miniTitle;
+        @extend %nav;
       }
     }
     li {
-      @extend %miniTitle;
+      @extend %nav;
     }
   }
 }
@@ -55,19 +58,20 @@ header {
 .banner_top {
   height: 90vh;
   width: 100%;
-  background-image:  url("../../image/banner_top.jpeg");
+  background-image: url("../../image/banner_top.jpeg");
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h4{
+  margin-bottom: 80px;
+  h4 {
     font-size: 10px;
     font-weight: 700;
     margin-bottom: 30px;
     @extend %miniTitle;
   }
-  h3{
+  h3 {
     width: 32%;
     font-size: 40px;
     text-align: center;
@@ -75,7 +79,7 @@ header {
     @extend %miniTitle;
   }
   a {
-    width:18%;
+    width: 18%;
     border: 1px solid black;
     text-decoration: none;
     text-align: center;
@@ -83,6 +87,67 @@ header {
     font-size: 10px;
     font-weight: 700;
     color: black;
+    transition: color 0.3s linear, background 0.3s linear;
     @extend %miniTitle;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.banner_second {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  
+
+  .banner_second_image {
+    width: 50%;
+    height: 100%;
+    img {
+      width: 100%;
+      
+    }
+  }
+  .banner_second_text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f3ede8;
+    h4 {
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color:rgb(65, 65, 65);
+      @extend %miniTitle;
+    }
+    h3 {
+      width: 50%;
+      font-size: 24px;
+      text-align: center;
+      line-height: 38px;
+      margin-bottom: 30px;
+      color:rgb(65, 65, 65);
+      @extend %miniTitle;
+    }
+    a {
+      width: 40%;
+      border: 1px solid black;
+      text-decoration: none;
+      text-align: center;
+      padding: 20px 0px;
+      font-size: 10px;
+      font-weight: 700;
+      color: black;
+      transition: color 0.3s linear, background 0.3s linear;
+      @extend %miniTitle;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
   }
 }
