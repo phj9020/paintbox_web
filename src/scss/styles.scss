@@ -8,8 +8,10 @@
 
 body {
   font-family: "Caladea", serif;
-  padding: 0px 140px;
   padding-top: 70px;
+  & > *:not(.footer) {
+    padding: 0px 140px;
+  }
 }
 a {
   color: inherit;
@@ -34,11 +36,11 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
-  padding: 0px 140px;
   background-color: white;
   display: flex;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  z-index: 1;
 
   nav {
     width: 100%;
@@ -70,14 +72,14 @@ header {
 }
 
 .banner_top {
-  height: 90vh;
-  width: 100%;
+  height: 100vh;
   background-image: url("../../image/banner_top.jpeg");
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px 140px;
   margin-bottom: 80px;
   h4 {
     font-size: 10px;
@@ -178,7 +180,7 @@ header {
       color: rgb(65, 65, 65);
       @extend %miniTitle;
     }
-    h3{
+    h3 {
       width: 60%;
       font-size: 24px;
       text-align: center;
@@ -187,27 +189,57 @@ header {
       color: rgb(65, 65, 65);
       @extend %miniTitle;
     }
-    a{
+    a {
       width: 30%;
     }
-
   }
 }
 
-
-.gallery{
+.gallery {
   width: 100%;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   gap: 0px;
-  .gallery_poster{
+  margin-bottom: 80px;
+  .gallery_poster {
     height: 100%;
     img {
       max-width: 100%;
-      transition: opacity 0.3s linear;
-      &:hover{
+      // transition: opacity 0.3s linear;
+      &:hover {
         opacity: 0.5;
       }
+    }
+  }
+}
+
+.footer {
+  padding: 0px 0px;
+  background-color: #f3ede8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 65px 140px;
+  .footer_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .column_title{
+      @extend %miniTitle;
+      font-size: 10px;
+      margin-bottom: 30px;
+      opacity: 0.5;
+    }
+    ul{
+      text-align:center;
+    }
+    li {
+      font-size: 10px;
+      @extend %nav;
+      margin-bottom: 10px;
+    }
+    &:nth-child(2){
+      border-right: 1px solid black;
+      border-left: 1px solid black;
     }
   }
 }
