@@ -159,11 +159,12 @@ header {
     }
     &:nth-child(odd) {
       img {
-        order: 1;
+        order: -2;
       }
     }
   }
   .post_content {
+    order: -1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -190,5 +191,23 @@ header {
       width: 30%;
     }
 
+  }
+}
+
+
+.gallery{
+  width: 100%;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  gap: 0px;
+  .gallery_poster{
+    height: 100%;
+    img {
+      max-width: 100%;
+      transition: opacity 0.3s linear;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
   }
 }
