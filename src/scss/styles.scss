@@ -207,6 +207,7 @@ header {
       max-width: 100%;
       // transition: opacity 0.3s linear;
       &:hover {
+        cursor: pointer;
         opacity: 0.5;
       }
     }
